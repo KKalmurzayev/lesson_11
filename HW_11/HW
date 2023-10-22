@@ -1,0 +1,35 @@
+'''1. Создайте Excel-файл с помощью библиотеки openpyxl и запишите в него некоторые
+данные, например, список пользователей с их именами и электронными адресами.
+2. Напишите Python-скрипт, который будет читать данные из созданного Excel-файла с
+ использованием openpyxl и выводить их в консоль.'''
+
+import openpyxl
+
+wb = openpyxl.reader.excel.load_workbook(filename="file.xlsx")
+sheet =wb.active
+for i in range(1, 5):
+    print(sheet['A'+str(i)].value, sheet['B'+str(i)].value, sheet['C'+str(i)].value, sheet['D'+str(i)].value)
+
+
+
+
+'''1. Напишите Python скрипт, который использует библиотеку requests для взаимодействия
+ с JSON API JSONPlaceholder (https://jsonplaceholder.typicode.com). Ваш скрипт должен
+выполнить следующие действия: Отправить GET-запрос для получения списка всех пользователей.
+2. Распарсить ответ в формате JSON и вывести на экран имена (поля "name") всех  пользователей. '''
+
+
+# from openpyxl import Workbook
+# import requests
+# import json
+# #from docx import Document
+
+# response = requests.get("https://jsonplaceholder.typicode.com/users")
+# data =response.json()
+# with open("data.json", "w") as json_file:
+#    json.dump(data, json_file)
+# with open("data.json", "r") as json_file:
+#     data_dict = json.load(json_file)
+
+# for i in data_dict:
+#     print(i["name"])
